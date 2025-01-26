@@ -15,4 +15,8 @@ DEVELHELP ?= 1
 # Change this to 0 show compiler invocation lines by default:
 QUIET ?= 1
 
+USEMODULE += xtimer#need to add in make file
+USEMODULE += shell
+
+
 include $(RIOTBASE)/Makefile.include
