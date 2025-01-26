@@ -30,8 +30,35 @@
 #include "net/gnrc.h"
 #include "at86rf2xx_registers.h"
 #include "at86rf2xx_internal.h"
+<<<<<<< HEAD
 #if IS_USED(MODULE_AT86RF2XX_AES_SPI)
 #include "at86rf2xx_aes.h"
+=======
+#include "at86rf2xx_netdev.h"
+
+#define ENABLE_DEBUG 0
+#include "debug.h"
+
+
+void at86rf2xx_setup(at86rf2xx_t *dev, const at86rf2xx_params_t *params, uint8_t index)
+{
+    netdev_t *netdev = &dev->netdev.netdev;
+
+    netdev->driver = &at86rf2xx_driver;
+    /* State to return after receiving or transmitting */
+    dev->idle_state = AT86RF2XX_STATE_TRX_OFF;
+    /* radio state is P_ON when first powered-on */
+    dev->state = AT86RF2XX_STATE_P_ON;
+    dev->pending_tx = 0;
+
+#if defined(MODULE_AT86RFA1) || defined(MODULE_AT86RFR2)
+    (void) params;
+    /* set all interrupts off */
+    at86rf2xx_reg_write(dev, AT86RF2XX_REG__IRQ_MASK, 0x00);
+#else
+    /* initialize device descriptor */
+    dev->params = *params;
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7
 #endif
 
 #define ENABLE_DEBUG 0

@@ -30,6 +30,7 @@
 
 #include "enc28j60.h"
 #include "enc28j60_regs.h"
+#include "at24mac.h"
 
 #define ENABLE_DEBUG    0
 #include "debug.h"
@@ -249,6 +250,14 @@ static void mac_set(enc28j60_t *dev, uint8_t *mac)
 
 static void on_int(void *arg)
 {
+<<<<<<< HEAD
+=======
+    /* disable global interrupt enable bit to avoid losing interrupts */
+
+  /* Needs investigation. Freezes MCU: Atmega256RFR2  --ro  */
+  /* cmd_bfc((enc28j60_t *)arg, REG_EIE, -1, EIE_INTIE); */
+
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7
     netdev_trigger_event_isr(arg);
 }
 
@@ -422,9 +431,25 @@ static int nd_init(netdev_t *netdev)
     cmd_wcr(dev, REG_B2_MAIPGL, 2, MAIPGL_FD);
 
     /* set default MAC address */
+<<<<<<< HEAD
     eui48_t addr;
     netdev_eui48_get(netdev, &addr);
     mac_set(dev, addr.uint8);
+=======
+    uint8_t macbuf[ETHERNET_ADDR_LEN];
+#ifdef MODULE_AT24MAC
+    eui64_t eui64;
+    at24mac_get_eui64(0, &eui64);
+    /* Mangle the EUI64 into a 48-bit Ethernet address. */
+    memcpy(&macbuf[0], &eui64.uint8[0], 3); /* Preserve vendor id */
+    memcpy(&macbuf[3], &eui64.uint8[5], 3); /* Use most volatile bits */
+#else
+    luid_get(macbuf, ETHERNET_ADDR_LEN);
+#endif
+    eui48_set_local((eui48_t*)macbuf);      /* locally administered address */
+    eui48_clear_group((eui48_t*)macbuf);    /* unicast address */
+    mac_set(dev, macbuf);
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7
 
     /* PHY configuration */
     cmd_w_phy(dev, REG_PHY_PHCON1, PHCON1_PDPXMD);

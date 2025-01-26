@@ -108,6 +108,13 @@ extern "C" {
  */
 #define BTN0_PIN            GPIO_PIN(PORT_B, 0)
 #define BTN0_MODE           GPIO_IN
+
+/** @} */
+/**
+ * @name    Generic GPIO Interrupts
+ * @{
+ */
+#define MODULE_ATMEGA_PCINT1
 /** @} */
 
 #ifdef __cplusplus

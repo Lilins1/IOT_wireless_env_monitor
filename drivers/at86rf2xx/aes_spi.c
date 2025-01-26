@@ -18,7 +18,11 @@
 
 #include <assert.h>
 
+<<<<<<< HEAD
 #include "ztimer.h"
+=======
+#include "xtimer.h"
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7
 #include "periph/spi.h"
 #include "at86rf2xx_aes.h"
 

@@ -212,4 +212,79 @@ int dns_msg_parse_reply(const uint8_t *buf, size_t len, int family,
     return -EBADMSG;
 }
 
+<<<<<<< HEAD:sys/net/application_layer/dns/msg.c
 /** @} */
+=======
+int sock_dns_query(const char *domain_name, void *addr_out, int family)
+{
+    static uint8_t dns_buf[SOCK_DNS_BUF_LEN];
+
+    if (sock_dns_server.port == 0) {
+        return -ECONNREFUSED;
+    }
+
+    if (strlen(domain_name) > SOCK_DNS_MAX_NAME_LEN) {
+        return -ENOSPC;
+    }
+
+    sock_udp_t sock_dns;
+
+    ssize_t res = sock_udp_create(&sock_dns, NULL, &sock_dns_server, 0);
+    if (res) {
+        goto out;
+    }
+
+    uint16_t id = 0; /* random? */
+    for (int i = 0; i < SOCK_DNS_RETRIES; i++) {
+        uint8_t *buf = dns_buf;
+
+        sock_dns_hdr_t *hdr = (sock_dns_hdr_t*) buf;
+        memset(hdr, 0, sizeof(*hdr));
+        hdr->id = id;
+        hdr->flags = htons(0x0120);
+        hdr->qdcount = htons(1 + (family == AF_UNSPEC));
+
+        uint8_t *bufpos = buf + sizeof(*hdr);
+
+        unsigned _name_ptr;
+        if ((family == AF_INET6) || (family == AF_UNSPEC)) {
+            _name_ptr = (bufpos - buf);
+            bufpos += _enc_domain_name(bufpos, domain_name);
+            bufpos += _put_short(bufpos, htons(DNS_TYPE_AAAA));
+            bufpos += _put_short(bufpos, htons(DNS_CLASS_IN));
+        }
+
+        if ((family == AF_INET) || (family == AF_UNSPEC)) {
+            if (family == AF_UNSPEC) {
+                bufpos += _put_short(bufpos, htons((0xc000) | (_name_ptr)));
+            }
+            else {
+                bufpos += _enc_domain_name(bufpos, domain_name);
+            }
+            bufpos += _put_short(bufpos, htons(DNS_TYPE_A));
+            bufpos += _put_short(bufpos, htons(DNS_CLASS_IN));
+        }
+
+        res = sock_udp_send(&sock_dns, buf, (bufpos-buf), NULL);
+        if (res <= 0) {
+            continue;
+        }
+        res = sock_udp_recv(&sock_dns, dns_buf, sizeof(dns_buf), 10*1000000LU, NULL);
+        if (res > 0) {
+            if (res > (int)DNS_MIN_REPLY_LEN) {
+                if ((res = _parse_dns_reply(dns_buf, res, addr_out,
+                                            family)) > 0) {
+                    goto out;
+                }
+            }
+            else {
+                res = -EBADMSG;
+            }
+        }
+    }
+
+out:
+    sock_udp_close(&sock_dns);
+    return res;
+}
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7:sys/net/application_layer/dns/dns.c

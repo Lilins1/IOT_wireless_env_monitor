@@ -166,6 +166,7 @@ ifneq (,$(filter prng,$(USEMODULE)))
   include $(RIOTBASE)/sys/random/Makefile.include
 endif
 
+<<<<<<< HEAD
 ifneq (,$(filter psa_crypto,$(USEMODULE)))
   include $(RIOTBASE)/sys/psa_crypto/Makefile.include
 endif
@@ -198,4 +199,8 @@ endif
 
 ifneq (,$(filter nanocoap,$(USEMODULE)))
   include $(RIOTBASE)/sys/net/application_layer/nanocoap/Makefile.include
+=======
+ifneq (,$(filter sim7020_sock%,$(USEMODULE)))
+  include $(RIOTBASE)/sys/net/sim7020/Makefile.include
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7
 endif

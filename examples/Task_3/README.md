@@ -1,3 +1,4 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< HEAD
 Hello World!
 ============
 
@@ -19,3 +20,9 @@ This example should foremost give you an overview how to use the Makefile system
 * The last line of your Makefile must be `include $(RIOTBASE)/Makefile.include`.
 
 The code itself may look like your usual *C* beginners hello-world example.
+====================================================================================================
+Write a program that consists of two processes.
+The first process first writes "hello, world". Thereafter, whenever triggered, the process writes "hello again, world". 
+The second process triggers the first process every n seconds, where n is a configurable variable. 
+Also, add a shell command to trigger the first process from the RIOT command line.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7

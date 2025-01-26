@@ -131,8 +131,13 @@ endif
 ifneq (,$(filter sema,$(USEMODULE)))
   DIRS += sema
 endif
+<<<<<<< HEAD
 ifneq (,$(filter sema_inv,$(USEMODULE)))
   DIRS += sema_inv
+=======
+ifneq (,$(filter sim7020 sim7020_%,$(USEMODULE)))
+  DIRS += net/sim7020
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7
 endif
 ifneq (,$(filter sixlowpan,$(USEMODULE)))
   DIRS += net/network_layer/sixlowpan

@@ -17,6 +17,7 @@ USEMODULE += gnrc_icmpv6_error
 USEMODULE += gnrc_ipv6_router_default
 # Add a routing protocol
 USEMODULE += gnrc_rpl
+USEMODULE += gnrc_rpl_srh
 USEMODULE += auto_init_gnrc_rpl
 # Additional networking modules that can be dropped if not needed
 USEMODULE += gnrc_icmpv6_echo
@@ -68,4 +69,7 @@ EXTERNAL_BOARD_DIRS += $(RIOTBASE)/tests/build_system/external_board_dirs/esp-ci
 include $(RIOTBASE)/Makefile.include
 
 # Set a custom channel if needed
+# For KTH Contiki gateway
+DEFAULT_CHANNEL=25
+DEFAULT_PAN_ID=0xFEED
 include $(RIOTMAKE)/default-radio-settings.inc.mk

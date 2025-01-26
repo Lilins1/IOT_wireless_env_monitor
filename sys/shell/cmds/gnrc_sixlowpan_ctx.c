@@ -26,11 +26,18 @@
 #include "shell.h"
 #include "timex.h"
 
+<<<<<<< HEAD:sys/shell/cmds/gnrc_sixlowpan_ctx.c
 #if IS_USED(MODULE_ZTIMER_MSEC)
 #include "ztimer.h"
 static ztimer_t del_timer[GNRC_SIXLOWPAN_CTX_SIZE];
 #else
 #include "xtimer.h"
+=======
+#ifdef BOARD_AVR_RSS2
+#include "pstr_print.h"
+#endif
+
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7:sys/shell/commands/sc_gnrc_6ctx.c
 static xtimer_t del_timer[GNRC_SIXLOWPAN_CTX_SIZE];
 #endif
 

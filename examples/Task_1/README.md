@@ -1,4 +1,5 @@
 Hello World!
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< HEAD
 ============
 
 This is a basic example how to use RIOT in your embedded application.
@@ -19,3 +20,6 @@ This example should foremost give you an overview how to use the Makefile system
 * The last line of your Makefile must be `include $(RIOTBASE)/Makefile.include`.
 
 The code itself may look like your usual *C* beginners hello-world example.
+====================================================================================================
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7

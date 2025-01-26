@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "at.h"
 #include "fmt.h"
@@ -30,6 +31,7 @@
 static int _check_urc(clist_node_t *node, void *arg);
 #endif
 
+<<<<<<< HEAD
 static ssize_t at_readline_skip_empty_stop_at_str(at_dev_t *dev, char *resp_buf,
                                                   size_t len, bool keep_eol,
                                                   char const *substr, uint32_t timeout);
@@ -40,6 +42,24 @@ static ssize_t read_line_or_echo(at_dev_t *dev, char const *cmd, char *resp_buf,
                         size_t len, uint32_t timeout);
 
 static inline bool starts_with(char const *str, char const *prefix)
+=======
+#define print _printprintable
+static void _printprintable(char *str, int n) {
+    char *c = str;
+    int i;
+    for (i = 0; i < n; i++, c++) {
+        if (isprint(*c))
+            putchar(*c);
+        else if (*c == '\n' || *c == '\r')
+            putchar(*c);
+        else
+            printf("x%02x", *c);
+    }
+}
+
+#if defined(MODULE_AT_URC_ISR)
+static void _event_process_urc(event_t *_event)
+>>>>>>> e8129b6dc3b472c1ccc67ca2d6dd7ebfa50be0b7
 {
     return strncmp(str, prefix, strlen(prefix)) == 0;
 }
