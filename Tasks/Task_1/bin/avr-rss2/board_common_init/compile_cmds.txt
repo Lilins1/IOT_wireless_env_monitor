@@ -1,0 +1,13 @@
+SRC: board_common.c
+SRC_NO_LTO: 
+SRCXX: 
+CURDIR: /home/yang0902/RIOT/boards/common/init
+CFLAGS: -DDEVELHELP -Werror -std=gnu11 -mmcu=atmega256rfr2  -ffunction-sections -fdata-sections -fno-builtin -fshort-enums -ggdb -g3 -Os -DRIOT_APPLICATION=\"hello-world\" -DBOARD_AVR_RSS2=\"avr-rss2\" -DRIOT_BOARD=BOARD_AVR_RSS2 -DCPU_ATMEGA256RFR2=\"atmega256rfr2\" -DRIOT_CPU=CPU_ATMEGA256RFR2 -fwrapv -Wstrict-overflow -fno-common -ffunction-sections -fdata-sections -Wall -Wextra -Wmissing-include-dirs -fno-delete-null-pointer-checks -fdiagnostics-color -Wstrict-prototypes -Wold-style-definition -Wformat=2 -fmacro-prefix-map=/home/yang0902/RIOT/= -Wcast-align -DCPU_RAM_SIZE=0x8000 -include '/home/yang0902/RIOT/examples/hello-world/bin/avr-rss2/riotbuild/riotbuild.h'
+LTOFLAGS: 
+INCLUDES: -I/home/yang0902/RIOT/core/lib/include -I/home/yang0902/RIOT/core/include -I/home/yang0902/RIOT/drivers/include -I/home/yang0902/RIOT/sys/include -I/home/yang0902/RIOT/boards/avr-rss2/include -I/home/yang0902/RIOT/boards/common/atmega/include -I/home/yang0902/RIOT/cpu/atmega256rfr2/include -I/home/yang0902/RIOT/cpu/atmega_common/include -I/home/yang0902/RIOT/cpu/avr8_common/include -isystem/home/yang0902/RIOT/cpu/avr8_common/avr_libc_extra/include -isystem/home/yang0902/RIOT/cpu/avr8_common/avr_libc_extra/include/vendor -I/home/yang0902/RIOT/sys/libc/include -I/home/yang0902/RIOT/sys/auto_init/include -I/home/yang0902/RIOT/examples/hello-world/bin/avr-rss2/preprocessor
+CXXFLAGS: -DDEVELHELP -Werror -mmcu=atmega256rfr2 -ffunction-sections -fdata-sections -fno-builtin -fshort-enums -ggdb -g3 -Os -DRIOT_APPLICATION=\"hello-world\" -DBOARD_AVR_RSS2=\"avr-rss2\" -DRIOT_BOARD=BOARD_AVR_RSS2 -DCPU_ATMEGA256RFR2=\"atmega256rfr2\" -DRIOT_CPU=CPU_ATMEGA256RFR2 -fwrapv -Wstrict-overflow -fno-common -ffunction-sections -fdata-sections -Wall -Wextra -Wmissing-include-dirs -fno-delete-null-pointer-checks -fdiagnostics-color -Wformat=2 -fmacro-prefix-map=/home/yang0902/RIOT/= -Wcast-align -DCPU_RAM_SIZE=0x8000 -include '/home/yang0902/RIOT/examples/hello-world/bin/avr-rss2/riotbuild/riotbuild.h' -Wno-missing-field-initializers
+CXXINCLUDES: 
+CC: avr-gcc
+CXX: avr-g++
+TARGET_ARCH: avr
+TARGET_ARCH_LLVM: 
