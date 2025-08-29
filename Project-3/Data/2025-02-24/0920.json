@@ -1,0 +1,50 @@
+[
+    {
+        "Packet": "57",
+        "Node": "1",
+        "Temp": "68.0",
+        "Light": "51",
+        "dT": "00:07",
+        "RSSI": "1.13",
+        "Humidity": "32",
+        "Extrnl": "1346",
+        "TimeStamp": "09:20:02",
+        "TimeUnix": 1740385202.2061982
+    },
+    {
+        "Packet": "58",
+        "Node": "1",
+        "Temp": "67.8",
+        "Light": "51",
+        "dT": "00:04",
+        "RSSI": "1.13",
+        "Humidity": "32",
+        "Extrnl": "1355",
+        "TimeStamp": "09:20:06",
+        "TimeUnix": 1740385206.6190462
+    },
+    {
+        "Packet": "59",
+        "Node": "1",
+        "Temp": "67.8",
+        "Light": "51",
+        "dT": "00:05",
+        "RSSI": "1.13",
+        "Humidity": "32",
+        "Extrnl": "1361",
+        "TimeStamp": "09:20:10",
+        "TimeUnix": 1740385210.831158
+    },
+    {
+        "Packet": "60",
+        "Node": "1",
+        "Temp": "67.8",
+        "Light": "50",
+        "dT": "00:04",
+        "RSSI": "1.13",
+        "Humidity": "32",
+        "Extrnl": "1349",
+        "TimeStamp": "09:20:15",
+        "TimeUnix": 1740385215.446738
+    }
+]

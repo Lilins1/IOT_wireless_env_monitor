@@ -1,0 +1,62 @@
+[
+    {
+        "Packet": "18",
+        "Node": "1",
+        "Temp": "69.6",
+        "Light": "25",
+        "dT": "00:02",
+        "RSSI": "2.61",
+        "Humidity": "31",
+        "Extrnl": "1408",
+        "TimeStamp": "09:51:54",
+        "TimeUnix": 1740387114.9157877
+    },
+    {
+        "Packet": "19",
+        "Node": "1",
+        "Temp": "69.6",
+        "Light": "22",
+        "dT": "00:03",
+        "RSSI": "1.42",
+        "Humidity": "31",
+        "Extrnl": "1413",
+        "TimeStamp": "09:51:57",
+        "TimeUnix": 1740387117.924675
+    },
+    {
+        "Packet": "20",
+        "Node": "1",
+        "Temp": "69.6",
+        "Light": "33",
+        "dT": "00:38",
+        "RSSI": "0.60",
+        "Humidity": "31",
+        "Extrnl": "1404",
+        "TimeStamp": "09:52:36",
+        "TimeUnix": 1740387156.067638
+    },
+    {
+        "Packet": "21",
+        "Node": "1",
+        "Temp": "69.6",
+        "Light": "11",
+        "dT": "00:05",
+        "RSSI": "3.18",
+        "Humidity": "31",
+        "Extrnl": "1381",
+        "TimeStamp": "09:52:41",
+        "TimeUnix": 1740387161.1018417
+    },
+    {
+        "Packet": "22",
+        "Node": "1",
+        "Temp": "69.6",
+        "Light": "33",
+        "dT": "00:06",
+        "RSSI": "0.46",
+        "Humidity": "33",
+        "Extrnl": "1393",
+        "TimeStamp": "09:52:47",
+        "TimeUnix": 1740387167.119435
+    }
+]

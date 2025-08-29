@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Data Monitor</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --background-color: #f5f6fa;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    h1 {
+      color: var(--primary-color);
+      text-align: center;
+    }
+    
+    .card {
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    button:hover {
+      background: #2980b9;
+    }
+    
+    .data-display {
+      text-align: left;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      width: 100%;
+    }
+    
+    .success {
+      color: #2ecc71;
+      padding: 10px;
+      background: #d4edda;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    
+    .error {
+      color: #e74c3c;
+      padding: 10px;
+      background: #f8d7da;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>IoT Sensor Dashboard</h1>
+
+    <div class="card">
+      <h2>Choose Date</h2>
+      <input type="date" id="datePicker">
+      <div id="fileList" class="data-display"></div>
+    </div>
+    
+    <!-- 上传到 Google Cloud -->
+    <!-- <div class="card">
+      <input type="file" id="googleFileInput" accept=".txt">
+      <button onclick="uploadFileToGoogleCloud()">Upload to Google Cloud</button>
+      <div id="googleUploadStatus"></div>
+    </div> -->
+
+    <!-- 本地文件读取 -->
+    <!-- <div class="card">
+      <input type="file" id="localFileInput" accept=".txt">
+      <button onclick="readLocalFile()">ReadFile</button>
+      <div id="localFileStatus"></div>
+    </div> -->
+
+    <!-- 数据显示区 -->
+    <div id="packetContainer" class="data-display">
+      <!-- 文件内容将在这里显示 -->
+    </div>
+
+    <div class=".card">
+      <!-- 文件内容将在这里显示 -->
+       Real time data
+    </div>
+
+    <div id="packetContainer2" class="data-display">
+      <!-- 文件内容将在这里显示 -->
+    </div>
+  </div>
+  
+
+
+  <script>
+    let selectedFile = null;
+
+    function readLocalFile() {
+      const fileInput = document.getElementById('localFileInput');
+      const statusDiv = document.getElementById('localFileStatus');
+      if (!fileInput.files[0]) {
+        statusDiv.innerHTML = '<div class="error">Please Choose Files</div>';
+        return;
+      }
+      selectedFile = fileInput.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('packetContainer').textContent = e.target.result;
+        statusDiv.innerHTML = `<div class="success">File LoadedLoaded: ${selectedFile.name}</div>`;
+      };
+      reader.onerror = function() {
+        statusDiv.innerHTML = '<div class="error">File Load Failed</div>';
+      };
+      reader.readAsText(selectedFile);
+    }
+
+    // function startAutoRead() {
+    //   setInterval(() => {
+    //     if (selectedFile) {
+    //       const reader = new FileReader();
+    //       reader.onload = function(e) {
+    //         document.getElementById('packetContainer').textContent = e.target.result;
+    //       };
+    //       reader.readAsText(selectedFile);
+    //     }
+    //   }, 3000);
+    // }
+
+    document.getElementById('localFileInput').addEventListener('change', () => {
+      readLocalFile();
+      // startAutoRead();
+    });
+  </script>
+
+  <script>
+    function fetchAndDisplayData() {
+      fetch('DataSet_real_time.TXT')
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          return response.text();
+        })
+        .then(text => {
+          document.getElementById('packetContainer2').innerText = text;
+        })
+        .catch(error => {
+          console.error('Fetch Error:', error);
+          document.getElementById('packetContainer2').innerHTML = `
+            <div class="error">
+              Failed to load data: ${error.message}<br>
+              Please check that:<br>
+              1. The server is running from the correct directory.<br>
+              2. The file \"Data/DataSet_test.TXT\" exists in the correct location.<br>
+              3. File name case sensitivity.
+            </div>
+          `;
+        });
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchAndDisplayData();
+      setInterval(fetchAndDisplayData, 20000);
+    });
+  </script>
+
+<script>
+  // 新增功能相关JavaScript
+  document.getElementById('datePicker').addEventListener('change', async (e) => {
+    const selectedDate = e.target.value;
+    const folderPath = `DataInJson/${selectedDate}/`;
+    
+    try {
+      // 调用云存储接口获取文件列表
+      const files = await listFilesInDirectory(folderPath);
+      renderFileLinks(files);
+    } catch (error) {
+      console.error('Error fetching files:', error);
+      document.getElementById('fileList').innerHTML = 
+        `<div class="error">获取文件列表失败: ${error.message}</div>`;
+    }
+  });
+  
+  function renderFileLinks(files) {
+    const container = document.getElementById('fileList');
+    container.innerHTML = files.length 
+      ? '<h3>选择数据文件：</h3>' 
+      : '<div class="error">该日期无可用数据</div>';
+  
+    files.forEach(file => {
+      const link = document.createElement('a');
+      link.style.display = 'block';
+      link.href = '#';
+      link.textContent = file.name.split('/').pop();
+      link.onclick = () => loadAndDisplayData(file.name);
+      container.appendChild(link);
+    });
+  }
+  
+  async function loadAndDisplayData(filePath) {
+    try {
+      // 获取文件内容
+      const [file] = await storage.bucket(bucketName).file(filePath).download();
+      const data = JSON.parse(file.toString());
+      
+      // 创建表格显示数据
+      const table = document.createElement('table');
+      table.innerHTML = `
+        <thead>
+          <tr>${Object.keys(data[0]).map(k => `<th>${k}</th>`).join('')}</tr>
+        </thead>
+        <tbody>
+          ${data.map(row => `
+            <tr>${Object.values(row).map(v => `<td>${v}</td>`).join('')}</tr>
+          `).join('')}
+        </tbody>
+      `;
+      
+      // 清空并显示表格
+      const container = document.getElementById('packetContainer');
+      container.innerHTML = '<h3>传感器数据详情：</h3>';
+      container.appendChild(table);
+      
+    } catch (error) {
+      console.error('Error loading data:', error);
+      document.getElementById('packetContainer').innerHTML = 
+        `<div class="error">数据加载失败: ${error.message}</div>`;
+    }
+  }
+  
+  // 修改Google_upload.js中的listFilesInDirectory函数
+  async function listFilesInDirectory(directoryPrefix) {
+    try {
+      const [files] = await storage.bucket(bucketName).getFiles({ prefix: directoryPrefix });
+      return files.filter(file => !file.name.endsWith('/')); // 过滤掉目录本身
+    } catch (error) {
+      console.error('列出文件失败:', error);
+      throw error;
+    }
+  }
+  </script>
+
+
+  <script src="app.js"></script>
+  <script src="Google_upload.js"></script>
+</body>
+</html>

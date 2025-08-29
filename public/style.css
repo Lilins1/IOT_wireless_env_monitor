@@ -1,0 +1,17 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  input, button {
+    margin: 10px 0;
+    padding: 8px;
+  }
+  #progress {
+    margin-top: 10px;
+    color: #666;
+  }

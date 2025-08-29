@@ -1,0 +1,26 @@
+[
+    {
+        "Packet": "69",
+        "Node": "1",
+        "Temp": "67.2",
+        "Light": "44",
+        "dT": "00:21",
+        "RSSI": "0.06",
+        "Humidity": "33",
+        "Extrnl": "1425",
+        "TimeStamp": "09:40:17",
+        "TimeUnix": 1740386417.7763326
+    },
+    {
+        "Packet": "70",
+        "Node": "1",
+        "Temp": "67.4",
+        "Light": "40",
+        "dT": "00:25",
+        "RSSI": "0.23",
+        "Humidity": "33",
+        "Extrnl": "1349",
+        "TimeStamp": "09:40:42",
+        "TimeUnix": 1740386442.8012412
+    }
+]

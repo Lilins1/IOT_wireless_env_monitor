@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "@google-cloud/storage": "^7.15.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase": "^11.3.0"
+  },
+  "name": "firebase_webpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start_src": "live-server src",
+    "start_pub": "live-server pub"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lilins1/IOT_FireBase_Webpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lilins1/IOT_FireBase_Webpage/issues"
+  },
+  "homepage": "https://github.com/Lilins1/IOT_FireBase_Webpage#readme",
+  "description": ""
+}

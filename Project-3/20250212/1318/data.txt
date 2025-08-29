@@ -1,0 +1,107 @@
+Packet #  204 |
+Node   1 | TX ID  ---   | Temp   70.5 F | Light   306 lx
+Time 00:09:16 | dT 00:01 | RSSI  1.08mW | Humidity 23 % | Extrnl 1418 mV
+Packet #  205 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   298 lx
+Time 00:09:18 | dT 00:02 | RSSI  4.31mW |
+Humidity 23 % | Extrnl 1373 mV
+Packet #  2
+06 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   298 lx
+Time 00:09:20 | dT 00:02 | RSSI  4.31mW | Humidity 23 % | Extrnl 1384 mV
+Packet #  207 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   304 lx
+Time 00:09:21 | dT 00:01 | RSSI  3.96mW | Humidity 23 % | Extrnl 1379 mV
+Packet #  208 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   302 lx
+Time 00:09:23 | dT 00:02 | RSSI  3.96mW | Humidity 23 % | Ext
+rnl 1358 mV
+Pa
+cket #  209 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   298 lx
+Time 00:09:25 | dT 00:02 | RSSI  3.79mW | Humidity 23 % | Extrnl 1349 mV
+Packet #  210 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   287
+lx
+Time 00:09:27 | dT 00:02 | RSSI  3.96mW | Humidity 23 % | Extrnl 1393 mV
+Packet #
+211 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   287 lx
+Time 00:09:28 | dT 00:01 | RSSI  3.96mW | Humidity 23 % | Extrnl 1417 mV
+Packet #  212 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   301 lx
+Time 00:09:29 | dT 00:0
+1 | RSSI  4.14mW | Humidity 23 % | Extrnl 1396 mV
+Packet #  213
+| Node   1 | TX ID  ---   | Temp   70.5 F | Light   291 lx
+Time 00:09:30 | dT 00:01 | RSSI  4.31mW | Humidity 23 % | Extrnl 1391 mV
+Packet #  214 | Node   1
+| TX ID  ---   | Temp   70.5 F | Light   302 lx
+Time 00:09:32 | dT 00:02 | RSSI  3.96mW | Humidity 23 % | Extrnl 1402 mV
+Packet #  215 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   301 lx
+Time 00:09:33 | dT 00:01 | RSSI  3.96mW | Humidity 23 % | Extrnl 1416 mV
+Packet #  216 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   298 lx
+Time
+00:09:35 | dT 00:01 | RSSI  4.14mW | Humidity 23 % | Extrnl 1382 mV
+Packet #  217 | Node   1 | TX ID  ---   | Temp   70.5 F | Light
+291 lx
+Time 00:09:36 | dT 00:01 | RSSI  3.96mW | Humidity 23 % | Extrnl 1365 mV
+Packet #  218 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   302 lx
+Time 00:09:38 | dT 00:02 | RSSI  3.66mW | Humidit
+y 23 % | Extrnl 1367 mV
+Packet #  219 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   295 lx
+Time 00:09:42 | dT 00:04 | RSSI  3.79mW | Humidity 23 % | Extrnl 1361 mV
+Packet #  220 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   298
+lx
+Time 00:09:43 | dT 00:01 | RSSI  3.96mW | Humidity 23 % | Extrnl 1388 mV
+Packet #  221 | Node   1 | TX ID  ---   | Temp   70.5
+F | Light   287 lx
+Time 00:09:44 | dT 00:01 | RSSI  4.14mW | Humidity 23 % | Extrnl 1370 mV
+Packet #  222 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   308 lx
+Time 00:09:46 | dT 00:02 | RSSI  3.96mW
+| Humidity 23 % | Extrnl 1370 mV
+Packet #  223 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   304 lx
+Time 00:09:49 | dT 00:03 | RSSI  3.96mW | Humidity 23 % | Extrnl 1390 mV
+Packet #  224 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   293 lx
+Time 00:09:50 | dT 00:01 | RSSI  3.96mW | Humidity 24 % | Extrnl 1416 mV
+Packet #  225 | Node   1 | TX ID  ---   | Te
+mp   70.5 F | Light   291 lx
+Time 00:09:51 | dT 00:01 | RSSI  3.96mW | Humidity 23 % | Extrnl 1396 mV
+Packet #  226 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   304 lx
+Time 00:09:52 |
+dT 00:01 | RSSI  3.96mW | Humidity 23 % | Extrnl 1364 mV
+Packet #  227 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   302 lx
+Time 00:09:54 | dT 00:02 | RSSI  3.47mW | Humidity 24 % | Extrnl 1346 mV
+Packet #  228 | Node   1 | TX ID  ---   |
+Temp   70.5 F | Light   287 lx
+Time 00:09:56 | dT 00:02 | RSSI  3.18mW | Humidity 23 % | Extrnl 1373 mV
+Packet #  229 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   293 lx
+Time 00:09:57 | dT 00:01 | RSSI  --- mW | Humidity 23 % | Extrnl 1367 mV
+Packet #  230 | Node   1 | TX ID  ---   | Temp   70.5 F | Light
+302 lx
+Time 00:09:58 | dT 00:01 | RSSI  3.47mW | Humidity 23 % | Extrnl 1376 mV
+Packet #  231 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   290 lx
+Time 00:09:59 | dT 00:01 | RSS
+I  --- mW | Humidity 23 % | Extrnl 1381 mV
+Packet #  232 | Node   1 | TX ID  ---   | Temp   70
+.3 F | Light   291 lx
+Time 00:10:01 | dT 00:01 | RSSI  3.47mW | Humidity 23 % | Extrnl 1382 mV
+Packet #  233 | Node   1 | TX ID  ---   | Temp   70.3 F | Light   304 lx
+Time 00:10:02 | dT 00:01 | R
+SSI  3.47mW | Humidity 23 % | Extrnl 1376 mV
+Packet #  234 | Node   1 | TX ID  ---   | Temp   70.3 F | Light   287 lx
+Time 00:10:03 | dT 00:01 | RSSI  3.79mW | Humidity 23 % | Ext
+rnl 1382 mV
+Packet #  235 | Node   1 | TX ID  ---   | Temp   70.3 F | Light   306 lx
+Time 00
+:10:04 | dT 00:01 | RSSI  3.79mW | Humidity 23 % | Extrnl 1376 mV
+Packet #  236 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   291 lx
+Time 00:10:0
+6 | dT 00:01 | RSSI  0.26mW | Humidity 23 % | Extrnl 1382 mV
+Packet #  237 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   291 lx
+Time 00:10:07 | dT 00:01 | RSSI  0.09mW | Humidity 24 % | Extrnl 1370 mV
+Packet #  238 | Node   1 | TX I
+D  ---   | Temp   70.3 F | Light   304 lx
+Time 00:10:08 | dT 00:01 | RSSI  3.66mW | Humidity 23 % | Extrnl 1367 mV
+Packet #  239 | Node   1 | TX ID  ---   | Temp   70.3 F | Light
+287 lx
+Time 00:10:10 | dT 00:02 | RSSI  3.47mW | Humidity 24 % | Extrnl 1364 mV
+Packet #  240 | Node   1 | TX ID  ---   | Temp   70.5 F | Light   306 lx
+Time 00:10:11 | dT 00:01 | RSSI  3.47mW | Humidity 23 % | Extrnl 1353 mV
+Packet #  241 | Node   1 | TX ID  ---   | Temp   70.3 F
+| Light   302 lx
+Time 00:10:13 | dT 00:02 | RSSI  3.66mW | Humidity 24 % | Extrnl 1384 mV
+Packet #  242 | Node   1 | TX ID  ---   | Temp   70.3 F | Light   291 lx
+Time 00
